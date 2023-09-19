@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Python控制结构 | 木易＆馬也</title><meta name="keywords" content="Python,编程基础"><meta name="author" content="馬也"><meta name="copyright" content="馬也"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="控制结构条件控制if 语句格式： 123456if condition_1:    statement_block_1elif condition_2:    statement_block_2else:    statement_block_3   关键字为：if – elif – else。  注意：  1、每个条件后面要使用冒号 **:**，表示接下来是满足条件后要执行的语句块。 2、使用缩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python控制结构">
+<meta property="og:url" content="http://example.com/2023/03/24/Python%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="木易＆馬也">
+<meta property="og:description" content="控制结构条件控制if 语句格式： 123456if condition_1:    statement_block_1elif condition_2:    statement_block_2else:    statement_block_3   关键字为：if – elif – else。  注意：  1、每个条件后面要使用冒号 **:**，表示接下来是满足条件后要执行的语句块。 2、使用缩">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/train.jpg">
+<meta property="article:published_time" content="2023-03-24T01:27:04.423Z">
+<meta property="article:modified_time" content="2023-09-19T07:51:38.241Z">
+<meta property="article:author" content="馬也">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="编程基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/train.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/03/24/Python%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 馬也","link":"链接: ","source":"来源: 木易＆馬也","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Python控制结构',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-19 15:51:38'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="木易＆馬也" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/train.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-link"></i><span> 友链</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/970640814"><i class="fa-fw fa fa-star"></i><span> github</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.baidu.com/"><i class="fa-fw fa fa-star"></i><span> 百度</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/timeline/"><i class="fa-fw fa fa-bell"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fa fa-heart"></i><span> about</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly/"><i class="fa-fw fa fa-heart"></i><span> butterfly</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/train.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">木易＆馬也</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-link"></i><span> 友链</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/970640814"><i class="fa-fw fa fa-star"></i><span> github</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.baidu.com/"><i class="fa-fw fa fa-star"></i><span> 百度</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/timeline/"><i class="fa-fw fa fa-bell"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fa fa-heart"></i><span> about</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly/"><i class="fa-fw fa fa-heart"></i><span> butterfly</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Python控制结构</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-24T01:27:04.423Z" title="发表于 2023-03-24 09:27:04">2023-03-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-19T07:51:38.241Z" title="更新于 2023-09-19 15:51:38">2023-09-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Python控制结构"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="控制结构"><a href="#控制结构" class="headerlink" title="控制结构"></a>控制结构</h1><h2 id="条件控制"><a href="#条件控制" class="headerlink" title="条件控制"></a>条件控制</h2><h3 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h3><p>格式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> condition_1:</span><br><span class="line">    statement_block_1</span><br><span class="line"><span class="keyword">elif</span> condition_2:</span><br><span class="line">    statement_block_2</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    statement_block_3</span><br></pre></td></tr></table></figure>
+
+<p> 关键字为：<strong>if – elif – else</strong>。 </p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>1、每个条件后面要使用冒号 **:**，表示接下来是满足条件后要执行的语句块。</li>
+<li>2、使用缩进来划分语句块，相同缩进数的语句在一起组成一个语句块。</li>
+<li>3、在 Python 中没有 <code>switch...case</code> 语句，但在 Python3.10 版本添加了 <code>match...case</code>。</li>
+</ul>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var1 = <span class="number">77</span></span><br><span class="line"><span class="keyword">if</span> var1:</span><br><span class="line">    <span class="built_in">print</span> (<span class="string">&quot;1 - if 表达式条件为 true&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span> (var1)</span><br><span class="line"> </span><br><span class="line">var2 = <span class="number">0</span></span><br><span class="line"><span class="keyword">if</span> var2:</span><br><span class="line">    <span class="built_in">print</span> (<span class="string">&quot;2 - if 表达式条件为 true&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span> (var2)</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;Good bye!&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675130998542.png" alt="1675130998542" style="zoom:67%;" />
+
+<p>实例： 狗的年龄计算判断 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入你家狗狗的年龄: &quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> age &lt;= <span class="number">0</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;你是在逗我吧!&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> age == <span class="number">1</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;相当于 14 岁的人。&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> age == <span class="number">2</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;相当于 22 岁的人。&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> age &gt; <span class="number">2</span>:</span><br><span class="line">    human = <span class="number">22</span> + (age -<span class="number">2</span>)*<span class="number">5</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;对应人类年龄: &quot;</span>, human)</span><br><span class="line"> </span><br><span class="line"><span class="comment">### 退出提示</span></span><br><span class="line"><span class="built_in">input</span>(<span class="string">&quot;点击 enter 键退出&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675131100710.png" alt="1675131100710" style="zoom:67%;" />
+
+<h3 id="if-嵌套"><a href="#if-嵌套" class="headerlink" title="if 嵌套"></a>if 嵌套</h3><p>结构：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 表达式<span class="number">1</span>:</span><br><span class="line">    语句</span><br><span class="line">    <span class="keyword">if</span> 表达式<span class="number">2</span>:</span><br><span class="line">        语句</span><br><span class="line">    <span class="keyword">elif</span> 表达式<span class="number">3</span>:</span><br><span class="line">        语句</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        语句</span><br><span class="line"><span class="keyword">elif</span> 表达式<span class="number">4</span>:</span><br><span class="line">    语句</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    语句</span><br></pre></td></tr></table></figure>
+
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">num=<span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;输入一个数字：&quot;</span>))</span><br><span class="line"><span class="keyword">if</span> num%<span class="number">2</span>==<span class="number">0</span>:</span><br><span class="line">    <span class="keyword">if</span> num%<span class="number">3</span>==<span class="number">0</span>:</span><br><span class="line">        <span class="built_in">print</span> (<span class="string">&quot;你输入的数字可以整除 2 和 3&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span> (<span class="string">&quot;你输入的数字可以整除 2，但不能整除 3&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">if</span> num%<span class="number">3</span>==<span class="number">0</span>:</span><br><span class="line">        <span class="built_in">print</span> (<span class="string">&quot;你输入的数字可以整除 3，但不能整除 2&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>  (<span class="string">&quot;你输入的数字不能整除 2 和 3&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675131202797.png" alt="1675131202797" style="zoom:80%;" />
+
+<h3 id="match…case"><a href="#match…case" class="headerlink" title="match…case"></a>match…case</h3><p> match 后的对象会依次与 case 后的内容进行匹配，如果匹配成功，则执行匹配到的表达式，否则直接跳过，<code>_</code> 可以匹配一切。 </p>
+<p>结构：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">match</span> subject:</span><br><span class="line">    <span class="keyword">case</span> &lt;pattern_1&gt;:</span><br><span class="line">        &lt;action_1&gt;</span><br><span class="line">    <span class="keyword">case</span> &lt;pattern_2&gt;:</span><br><span class="line">        &lt;action_2&gt;</span><br><span class="line">    <span class="keyword">case</span> &lt;pattern_3&gt;:</span><br><span class="line">        &lt;action_3&gt;</span><br><span class="line">    <span class="keyword">case</span> _:</span><br><span class="line">        &lt;action_wildcard&gt;</span><br></pre></td></tr></table></figure>
+
+<p> <code>case _</code>: 类似于 C 和 Java 中的 <code>default</code>:，当其他 case 都无法匹配时，匹配这条，保证永远会匹配成功。 </p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mystatus=<span class="number">404</span></span><br><span class="line"><span class="built_in">print</span>(http_error(<span class="number">400</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">http_error</span>(<span class="params">status</span>):</span><br><span class="line">    <span class="keyword">match</span> status:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">400</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;Bad request&quot;</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">404</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;Not found&quot;</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">418</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;I&#x27;m a teapot&quot;</span></span><br><span class="line">        <span class="keyword">case</span> _:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;Something&#x27;s wrong with the internet&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p> 一个 case 也可以设置多个匹配条件，条件使用 <code>｜</code> 隔开 ：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">... </span>   </span><br><span class="line">    <span class="keyword">case</span> <span class="number">401</span>|<span class="number">403</span>|<span class="number">404</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Not allowed&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="循环控制"><a href="#循环控制" class="headerlink" title="循环控制"></a>循环控制</h2><h3 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h3><p>结构：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> 判断条件(condition)：</span><br><span class="line">    执行语句(statements)……</span><br></pre></td></tr></table></figure>
+
+<p> <strong>在 Python 中没有 do..while 循环。</strong> </p>
+<p> 实例：使用了while 来计算 1 到 100 的总和 。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">counter = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> counter &lt;= n:</span><br><span class="line">    <span class="built_in">sum</span> += counter</span><br><span class="line">    counter += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;1 到 %d 之和为: %d&quot;</span> % (n, <span class="built_in">sum</span>))</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675137212199.png" alt="1675137212199" style="zoom:80%;" />
+
+<h4 id="无限循环"><a href="#无限循环" class="headerlink" title="无限循环"></a>无限循环</h4><p> 可以通过设置条件表达式永远不为 false 来实现无限循环 。</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> var == <span class="number">1</span>:  <span class="comment"># 表达式永远为 true    </span></span><br><span class="line">	num = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;输入一个数字  :&quot;</span>))    </span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;你输入的数字是: &quot;</span>, num)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Good bye!&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675137316665.png" alt="1675137316665" style="zoom:67%;" />
+
+<p>可以使用 <strong>CTRL+C</strong> 来退出当前的无限循环。</p>
+<p>无限循环在服务器上客户端的实时请求非常有用。</p>
+<h4 id="while-循环使用-else-语句"><a href="#while-循环使用-else-语句" class="headerlink" title="while 循环使用 else 语句"></a>while 循环使用 else 语句</h4><p>格式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> &lt;expr&gt;:</span><br><span class="line">    &lt;statement(s)&gt;</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    &lt;additional_statement(s)&gt;</span><br></pre></td></tr></table></figure>
+
+<p> expr 条件语句为 true 则执行 statement(s) 语句块，如果为 false，则执行 additional_statement(s)。 </p>
+<p>实例： 循环输出数字，并判断大小 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> count &lt; <span class="number">5</span>:</span><br><span class="line">   <span class="built_in">print</span> (count, <span class="string">&quot; 小于 5&quot;</span>)</span><br><span class="line">   count = count + <span class="number">1</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">   <span class="built_in">print</span> (count, <span class="string">&quot; 大于或等于 5&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675137447171.png" alt="1675137447171" style="zoom: 50%;" />
+
+<h4 id="简单语句组"><a href="#简单语句组" class="headerlink" title="简单语句组"></a>简单语句组</h4><p>类似 if 语句的语法，如果你的 while 循环体中只有一条语句，你可以将该语句与 while 写在同一行中。</p>
+<h3 id="for-语句"><a href="#for-语句" class="headerlink" title="for 语句"></a>for 语句</h3><p>格式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;variable&gt; <span class="keyword">in</span> &lt;sequence&gt;:</span><br><span class="line">    &lt;statements&gt;</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    &lt;statements&gt;</span><br></pre></td></tr></table></figure>
+
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sites = [<span class="string">&quot;Baidu&quot;</span>, <span class="string">&quot;Google&quot;</span>, <span class="string">&quot;TC&quot;</span>, <span class="string">&quot;Taobao&quot;</span>]</span><br><span class="line"><span class="keyword">for</span> site <span class="keyword">in</span> sites:</span><br><span class="line">    <span class="built_in">print</span>(site)</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675137606610.png" alt="1675137606610" style="zoom:50%;" />
+
+<p>实例：打印字符串中的每个字符 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">word = <span class="string">&#x27;TangChi&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> letter <span class="keyword">in</span> word:</span><br><span class="line">    <span class="built_in">print</span>(letter)</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675137702843.png" alt="1675137702843" style="zoom:50%;" />
+
+<p> 整数范围值可以配合 range() 函数使用 ：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  1 到 7 的所有数字：</span></span><br><span class="line"><span class="keyword">for</span> number <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">8</span>):</span><br><span class="line">    <span class="built_in">print</span>(number)</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675137761757.png" alt="1675137761757" style="zoom:50%;" />
+
+<h4 id="for…else"><a href="#for…else" class="headerlink" title="for…else"></a>for…else</h4><p> for…else 语句用于在循环结束后执行一段代码。 </p>
+<p>格式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> iterable:</span><br><span class="line">    <span class="comment"># 循环主体</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="comment"># 循环结束后执行的代码</span></span><br></pre></td></tr></table></figure>
+
+<p>当循环执行完毕（即遍历完 iterable 中的所有元素）后，会执行 else 子句中的代码，如果在循环过程中遇到了 break 语句，则会中断循环，此时不会执行 else 子句。 </p>
+<h3 id="range-函数"><a href="#range-函数" class="headerlink" title="range() 函数"></a>range() 函数</h3><p>如果你需要遍历数字序列，可以使用内置 range() 函数。 </p>
+<h3 id="break-和-continue-语句及循环中的-else-子句"><a href="#break-和-continue-语句及循环中的-else-子句" class="headerlink" title="break 和 continue 语句及循环中的 else 子句"></a>break 和 continue 语句及循环中的 else 子句</h3><p><strong>break</strong> 语句可以跳出 for 和 while 的循环体。如果你从 for 或 while 循环中终止，任何对应的循环 else 块将不执行。</p>
+<p><strong>continue</strong> 语句被用来告诉 Python 跳过当前循环块中的剩余语句，然后继续进行下一轮循环。</p>
+<h3 id="pass-语句"><a href="#pass-语句" class="headerlink" title="pass 语句"></a>pass 语句</h3><p>Python pass是空语句，是为了保持程序结构的完整性。</p>
+<p>pass 不做任何事情，一般用做占位语句</p>
+<p>实例： 在字母为 o 时 执行 pass 语句块 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> letter <span class="keyword">in</span> <span class="string">&#x27;Toanog&#x27;</span>:</span><br><span class="line">    <span class="keyword">if</span> letter == <span class="string">&#x27;o&#x27;</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;执行 pass 块&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;当前字母 :&#x27;</span>, letter)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Good bye!&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675138261457.png" alt="1675138261457" style="zoom:50%;" />
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">馬也</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/03/24/Python%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84/">http://example.com/2023/03/24/Python%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">木易＆馬也</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a><a class="post-meta__tags" href="/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础</a></div><div class="post_share"><div class="social-share" data-image="/img/train.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechatpay.png" target="_blank"><img class="post-qr-code-img" src="/img/wechatpay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.png" target="_blank"><img class="post-qr-code-img" src="/img/alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/24/Python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"><img class="prev-cover" src="/img/train.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Python数据类型转换</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/24/Python%E5%9F%BA%E7%A1%80/"><img class="next-cover" src="/img/train.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Python基础</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/03/24/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="Python面向对象"><img class="cover" src="/img/train.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-24</div><div class="title">Python面向对象</div></div></a></div><div><a href="/2023/03/24/Python%E9%94%99%E8%AF%AF%E5%92%8C%E5%BC%82%E5%B8%B8/" title="Python错误与异常"><img class="cover" src="/img/train.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-24</div><div class="title">Python错误与异常</div></div></a></div><div><a href="/2023/03/24/Python%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/" title="Python迭代器与生成器"><img class="cover" src="/img/train.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-24</div><div class="title">Python迭代器与生成器</div></div></a></div><div><a href="/2023/03/24/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="Python数据结构"><img class="cover" src="/img/train.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-24</div><div class="title">Python数据结构</div></div></a></div><div><a href="/2023/03/24/Python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="Python数据类型转换"><img class="cover" src="/img/train.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-24</div><div class="title">Python数据类型转换</div></div></a></div><div><a href="/2023/03/24/Python%E5%9F%BA%E7%A1%80/" title="Python基础"><img class="cover" src="/img/train.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-24</div><div class="title">Python基础</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/train.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">馬也</div><div class="author-info__description">路漫漫其修远兮，吾将上下而求索</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/970640814"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/970640814" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/970640814@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">控制结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%8E%A7%E5%88%B6"><span class="toc-number">1.1.</span> <span class="toc-text">条件控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.1.1.</span> <span class="toc-text">if 语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if-%E5%B5%8C%E5%A5%97"><span class="toc-number">1.1.2.</span> <span class="toc-text">if 嵌套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#match%E2%80%A6case"><span class="toc-number">1.1.3.</span> <span class="toc-text">match…case</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6"><span class="toc-number">1.2.</span> <span class="toc-text">循环控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#while-%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.2.1.</span> <span class="toc-text">while 循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E9%99%90%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">无限循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#while-%E5%BE%AA%E7%8E%AF%E4%BD%BF%E7%94%A8-else-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">while 循环使用 else 语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E8%AF%AD%E5%8F%A5%E7%BB%84"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">简单语句组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.2.</span> <span class="toc-text">for 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#for%E2%80%A6else"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">for…else</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#range-%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.3.</span> <span class="toc-text">range() 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#break-%E5%92%8C-continue-%E8%AF%AD%E5%8F%A5%E5%8F%8A%E5%BE%AA%E7%8E%AF%E4%B8%AD%E7%9A%84-else-%E5%AD%90%E5%8F%A5"><span class="toc-number">1.2.4.</span> <span class="toc-text">break 和 continue 语句及循环中的 else 子句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.5.</span> <span class="toc-text">pass 语句</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/09/10/day08-%E5%B8%B8%E7%94%A8API/" title="day08 - 常用API"><img src="/img/train.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="day08 - 常用API"/></a><div class="content"><a class="title" href="/2023/09/10/day08-%E5%B8%B8%E7%94%A8API/" title="day08 - 常用API">day08 - 常用API</a><time datetime="2023-09-10T02:07:11.364Z" title="发表于 2023-09-10 10:07:11">2023-09-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/10/day07-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%AC%94%E8%AE%B0/" title="day07 - 面向对象"><img src="/img/train.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="day07 - 面向对象"/></a><div class="content"><a class="title" href="/2023/09/10/day07-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%AC%94%E8%AE%B0/" title="day07 - 面向对象">day07 - 面向对象</a><time datetime="2023-09-10T02:07:11.360Z" title="发表于 2023-09-10 10:07:11">2023-09-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/10/day06-Debug&amp;%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0/" title="day06 - Debug&amp;基础练习"><img src="/img/train.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="day06 - Debug&amp;基础练习"/></a><div class="content"><a class="title" href="/2023/09/10/day06-Debug&amp;%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0/" title="day06 - Debug&amp;基础练习">day06 - Debug&amp;基础练习</a><time datetime="2023-09-10T02:07:11.357Z" title="发表于 2023-09-10 10:07:11">2023-09-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/10/day05-%E6%96%B9%E6%B3%95/" title="day05 - 方法"><img src="/img/train.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="day05 - 方法"/></a><div class="content"><a class="title" href="/2023/09/10/day05-%E6%96%B9%E6%B3%95/" title="day05 - 方法">day05 - 方法</a><time datetime="2023-09-10T02:07:11.354Z" title="发表于 2023-09-10 10:07:11">2023-09-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/10/day03-switch&amp;%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" title="day03 - switch&amp;循环语句"><img src="/img/train.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="day03 - switch&amp;循环语句"/></a><div class="content"><a class="title" href="/2023/09/10/day03-switch&amp;%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" title="day03 - switch&amp;循环语句">day03 - switch&amp;循环语句</a><time datetime="2023-09-10T02:07:11.351Z" title="发表于 2023-09-10 10:07:11">2023-09-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By 馬也</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, Welcome to TC's <a herf="https://maye7.cn/">Blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
