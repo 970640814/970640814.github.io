@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Python函数 | 木易＆馬也</title><meta name="keywords" content="Python,编程基础,Numpy"><meta name="author" content="馬也"><meta name="copyright" content="馬也"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Python函数 函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。   能提高应用的模块性，和代码的重复利用率。  定义一个函数你可以定义一个由自己想要功能的函数，以下是简单的规则：  函数代码块以 def 关键词开头，后接函数标识符名称和圆括号 ()。  任何传入参数和自变量必须放在圆括号中间，圆括号之间可以用于定义参数。  函数的第一行语句可以选择性地使用文档字符串—用于存放">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python函数">
+<meta property="og:url" content="http://example.com/2023/09/19/Python%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="木易＆馬也">
+<meta property="og:description" content="Python函数 函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。   能提高应用的模块性，和代码的重复利用率。  定义一个函数你可以定义一个由自己想要功能的函数，以下是简单的规则：  函数代码块以 def 关键词开头，后接函数标识符名称和圆括号 ()。  任何传入参数和自变量必须放在圆括号中间，圆括号之间可以用于定义参数。  函数的第一行语句可以选择性地使用文档字符串—用于存放">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/train.jpg">
+<meta property="article:published_time" content="2023-09-19T07:50:58.000Z">
+<meta property="article:modified_time" content="2023-09-19T07:50:58.000Z">
+<meta property="article:author" content="馬也">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="编程基础">
+<meta property="article:tag" content="Numpy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/train.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/09/19/Python%E5%87%BD%E6%95%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 馬也","link":"链接: ","source":"来源: 木易＆馬也","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Python函数',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-19 15:50:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="木易＆馬也" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/train.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-link"></i><span> 友链</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/970640814"><i class="fa-fw fa fa-star"></i><span> github</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.baidu.com/"><i class="fa-fw fa fa-star"></i><span> 百度</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/timeline/"><i class="fa-fw fa fa-bell"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fa fa-heart"></i><span> about</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly/"><i class="fa-fw fa fa-heart"></i><span> butterfly</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/train.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">木易＆馬也</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-link"></i><span> 友链</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/970640814"><i class="fa-fw fa fa-star"></i><span> github</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.baidu.com/"><i class="fa-fw fa fa-star"></i><span> 百度</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/timeline/"><i class="fa-fw fa fa-bell"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fa fa-heart"></i><span> about</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly/"><i class="fa-fw fa fa-heart"></i><span> butterfly</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Python函数</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-19T07:50:58.000Z" title="发表于 2023-09-19 15:50:58">2023-09-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-19T07:50:58.000Z" title="更新于 2023-09-19 15:50:58">2023-09-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python%E5%9F%BA%E7%A1%80/">Python基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Python函数"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Python函数"><a href="#Python函数" class="headerlink" title="Python函数"></a>Python函数</h1><p> 函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。 </p>
+<p> 能提高应用的模块性，和代码的重复利用率。 </p>
+<h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>你可以定义一个由自己想要功能的函数，以下是简单的规则：</p>
+<ul>
+<li><p>函数代码块以 <code>def</code> 关键词开头，后接函数标识符名称和圆括号 <code>()</code>。</p>
+</li>
+<li><p>任何传入参数和自变量必须放在圆括号中间，圆括号之间可以用于定义参数。</p>
+</li>
+<li><p>函数的第一行语句可以选择性地使用文档字符串—用于存放函数说明。</p>
+</li>
+<li><p>函数内容以冒号 <strong>:</strong> 起始，并且缩进。</p>
+</li>
+<li><p><code>return [表达式]</code> 结束函数，选择性地返回一个值给调用方，不带表达式的 return 相当于返回 None。</p>
+<img src="https://www.runoob.com/wp-content/uploads/2014/05/py-tup-10-26-1.png" alt="img" style="zoom:50%;" /></li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>定义函数使用 def 关键字，格式： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>（参数列表）:</span><br><span class="line">    函数体</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下，参数值和参数名称是按函数声明中定义的顺序匹配起来的。 </p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>() :</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"></span><br><span class="line">hello()</span><br></pre></td></tr></table></figure>
+
+<p>实例： 比较两个数，并返回较大的数 。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">max</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">if</span> a &gt; b:</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> b</span><br><span class="line"> </span><br><span class="line">a = <span class="number">4</span></span><br><span class="line">b = <span class="number">5</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">max</span>(a, b))</span><br></pre></td></tr></table></figure>
+
+<p>实例：计算面积函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算面积函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">area</span>(<span class="params">width, height</span>):</span><br><span class="line">    <span class="keyword">return</span> width * height</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">print_welcome</span>(<span class="params">name</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Welcome&quot;</span>, name)</span><br><span class="line">    </span><br><span class="line">print_welcome(<span class="string">&quot;Tang&quot;</span>)</span><br><span class="line">w = <span class="number">4</span></span><br><span class="line">h = <span class="number">5</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;width =&quot;</span>, w, <span class="string">&quot; height =&quot;</span>, h, <span class="string">&quot; area =&quot;</span>, area(w, h))</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675177789077.png" alt="1675177789077" style="zoom:67%;" />
+
+<h2 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h2><p>定义一个函数：给了函数一个名称，指定了函数里包含的参数，和代码块结构。</p>
+<p>这个函数的基本结构完成以后，你可以通过另一个函数调用执行，也可以直接从 Python 命令提示符执行。</p>
+<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><h3 id="可更改-mutable-与不可更改-immutable-对象"><a href="#可更改-mutable-与不可更改-immutable-对象" class="headerlink" title="可更改(mutable)与不可更改(immutable)对象"></a>可更改(mutable)与不可更改(immutable)对象</h3><ul>
+<li><strong>不可变类型：</strong>变量赋值 <strong>a&#x3D;5</strong> 后再赋值 <strong>a&#x3D;10</strong>，这里实际是新生成一个 int 值对象 10，再让 a 指向它，而 5 被丢弃，不是改变 a 的值，相当于新生成了 a。</li>
+<li><strong>可变类型：</strong>变量赋值 <strong>la&#x3D;[1,2,3,4]</strong> 后再赋值 <strong>la[2]&#x3D;5</strong> 则是将 list la 的第三个元素值更改，本身la没有动，只是其内部的一部分值被修改了。</li>
+</ul>
+<p>python 函数的参数传递：</p>
+<ul>
+<li><strong>不可变类型：</strong>类似 C++ 的值传递，如整数、字符串、元组。如 fun(a)，传递的只是 a 的值，没有影响 a 对象本身。如果在 fun(a) 内部修改 a 的值，则是新生成一个 a 的对象。</li>
+<li><strong>可变类型：</strong>类似 C++ 的引用传递，如 列表，字典。如 fun(la)，则是将 la 真正的传过去，修改后 fun 外部的 la 也会受影响</li>
+</ul>
+<h3 id="python-传不可变对象实例"><a href="#python-传不可变对象实例" class="headerlink" title="python 传不可变对象实例"></a>python 传不可变对象实例</h3><p>通过 <strong>id()</strong> 函数来查看内存地址变化：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">change</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(a))	<span class="comment"># 指向的是同一个对象</span></span><br><span class="line">    a = <span class="number">10</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(a))	<span class="comment"># 一个新对象</span></span><br><span class="line">    </span><br><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line">change(a)</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675213536682.png" alt="1675213536682" style="zoom:50%;" />
+
+<p>在调用函数前后，形参和实参指向的是同一个对象（对象 id 相同），在函数内部修改形参后，形参指向的是不同的 id。 </p>
+<h3 id="传可变对象实例"><a href="#传可变对象实例" class="headerlink" title="传可变对象实例"></a>传可变对象实例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">changeme</span>(<span class="params"> mylist </span>):</span><br><span class="line">   <span class="string">&quot;修改传入的列表&quot;</span></span><br><span class="line">   mylist.append([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">   <span class="built_in">print</span> (<span class="string">&quot;函数内取值: &quot;</span>, mylist)</span><br><span class="line">   <span class="keyword">return</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用changeme函数</span></span><br><span class="line">mylist = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>]</span><br><span class="line">changeme( mylist )</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;函数外取值: &quot;</span>, mylist)</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675213633504.png" alt="1675213633504" style="zoom:50%;" />
+
+<p>传入函数的和在末尾添加新内容的对象用的是同一个引用。 </p>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><p>以下是调用函数时可使用的正式参数类型：</p>
+<ul>
+<li>必需参数</li>
+<li>关键字参数</li>
+<li>默认参数</li>
+<li>不定长参数</li>
+</ul>
+<h3 id="必需参数"><a href="#必需参数" class="headerlink" title="必需参数"></a>必需参数</h3><p>必需参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。</p>
+<h3 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h3><p>关键字参数和函数调用关系紧密，函数调用使用关键字参数来确定传入的参数值。</p>
+<p>使用关键字参数允许函数调用时参数的顺序与声明时不一致，因为 Python 解释器能够用参数名匹配参数值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#可写函数说明</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">printinfo</span>(<span class="params"> name, age </span>):</span><br><span class="line">   <span class="string">&quot;打印任何传入的字符串&quot;</span></span><br><span class="line">   <span class="built_in">print</span> (<span class="string">&quot;名字: &quot;</span>, name)</span><br><span class="line">   <span class="built_in">print</span> (<span class="string">&quot;年龄: &quot;</span>, age)</span><br><span class="line">   <span class="keyword">return</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#调用printinfo函数</span></span><br><span class="line">printinfo( age=<span class="number">20</span>, name=<span class="string">&quot;Tang&quot;</span> )</span><br></pre></td></tr></table></figure>
+
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>调用函数时，如果没有传递参数，则会使用默认参数。</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#可写函数说明</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">printinfo</span>(<span class="params"> name, age = <span class="number">35</span> </span>):</span><br><span class="line">   <span class="string">&quot;打印任何传入的字符串&quot;</span></span><br><span class="line">   <span class="built_in">print</span> (<span class="string">&quot;名字: &quot;</span>, name)</span><br><span class="line">   <span class="built_in">print</span> (<span class="string">&quot;年龄: &quot;</span>, age)</span><br><span class="line">   <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h3><p>你可能需要一个函数能处理比当初声明时更多的参数。</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">functionname</span>(<span class="params">[formal_args,] *var_args_tuple </span>):</span><br><span class="line">   <span class="string">&quot;函数_文档字符串&quot;</span></span><br><span class="line">   function_suite</span><br><span class="line">   <span class="keyword">return</span> [expression]</span><br></pre></td></tr></table></figure>
+
+<p>加了 <code>*</code> 的参数会以元组(tuple)的形式导入，存放所有未命名的变量参数。  如果在函数调用时没有指定参数，它就是一个空元组。我们也可以不向函数传递未命名的变量。 </p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">printinfo</span>(<span class="params"> arg1, *vartuple </span>):</span><br><span class="line">   <span class="string">&quot;打印任何传入的参数&quot;</span></span><br><span class="line">   <span class="built_in">print</span> (<span class="string">&quot;输出: &quot;</span>)</span><br><span class="line">   <span class="built_in">print</span> (arg1)</span><br><span class="line">   <span class="built_in">print</span> (vartuple)</span><br><span class="line">   <span class="keyword">for</span> var <span class="keyword">in</span> vartuple:</span><br><span class="line">      <span class="built_in">print</span> (var)</span><br><span class="line">   <span class="keyword">return</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用printinfo 函数</span></span><br><span class="line">printinfo( <span class="number">77</span> )</span><br><span class="line">printinfo( <span class="number">70</span>, <span class="number">60</span>, <span class="number">50</span> )</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675214056355.png" alt="1675214056355" style="zoom:50%;" />
+
+<p>参数带两个星号 <code>**</code>基本语法如下： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">functionname</span>(<span class="params">[formal_args,] **var_args_dict </span>):</span><br><span class="line">   <span class="string">&quot;函数_文档字符串&quot;</span></span><br><span class="line">   function_suite</span><br><span class="line">   <span class="keyword">return</span> [expression]</span><br></pre></td></tr></table></figure>
+
+<p>加了两个星号 <code>**</code> 的参数会以字典的形式导入。 实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">printinfo</span>(<span class="params"> arg1, **vardict </span>):</span><br><span class="line">   <span class="string">&quot;打印任何传入的参数&quot;</span></span><br><span class="line">   <span class="built_in">print</span> (<span class="string">&quot;输出: &quot;</span>)</span><br><span class="line">   <span class="built_in">print</span> (arg1)</span><br><span class="line">   <span class="built_in">print</span> (vardict)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用printinfo 函数</span></span><br><span class="line">printinfo(<span class="number">1</span>, a=<span class="number">2</span>,b=<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675214160027.png" alt="1675214160027" style="zoom:67%;" />
+
+<p>声明函数时，参数中星号 ***** 可以单独出现 ：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">a,b,*,c</span>):</span><br><span class="line">    <span class="keyword">return</span> a+b+c</span><br></pre></td></tr></table></figure>
+
+<p>如果单独出现星号 <code>*</code>，则星号 <code>*</code> 后的参数必须用关键字传入 。</p>
+<h2 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h2><p>使用 <code>lambda</code> 来创建匿名函数。所谓匿名，意即不再使用 <code>def</code> 语句这样标准的形式定义一个函数。 </p>
+<ul>
+<li><code>lambda</code> 只是一个表达式，函数体比 <code>def</code> 简单很多。</li>
+<li>lambda 的主体是一个表达式，而不是一个代码块。仅仅能在 lambda 表达式中封装有限的逻辑进去。</li>
+<li>lambda 函数拥有自己的命名空间，且不能访问自己参数列表之外或全局命名空间里的参数。</li>
+<li>虽然 lambda 函数看起来只能写一行，却不等同于 C 或 C++ 的内联函数，后者的目的是调用小函数时不占用栈内存从而增加运行效率。</li>
+</ul>
+<p>格式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lambda</span> [arg1 [,arg2,.....argn]]:expression</span><br></pre></td></tr></table></figure>
+
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="built_in">sum</span> = <span class="keyword">lambda</span> arg1, arg2: arg1 + arg2</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用sum函数</span></span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;相加后的值为 : &quot;</span>, <span class="built_in">sum</span>( <span class="number">10</span>, <span class="number">20</span> ))</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;相加后的值为 : &quot;</span>, <span class="built_in">sum</span>( <span class="number">20</span>, <span class="number">20</span> ))</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675214418799.png" alt="1675214418799" style="zoom:67%;" />
+
+<p>可以将匿名函数封装在一个函数内，这样可以使用同样的代码来创建多个匿名函数。 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">myfunc</span>(<span class="params">n</span>):</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">lambda</span> a : a * n</span><br><span class="line"> </span><br><span class="line">mydoubler = myfunc(<span class="number">2</span>)</span><br><span class="line">mytripler = myfunc(<span class="number">3</span>)</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(mydoubler(<span class="number">11</span>))</span><br><span class="line"><span class="built_in">print</span>(mytripler(<span class="number">11</span>))</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675214509937.png" alt="1675214509937" style="zoom:67%;" />
+
+<h2 id="return-语句"><a href="#return-语句" class="headerlink" title="return 语句"></a>return 语句</h2><p><code>return [表达式]</code> 语句用于退出函数，选择性地向调用方返回一个表达式。不带参数值的 return 语句返回 None。</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sum</span>(<span class="params"> arg1, arg2 </span>):</span><br><span class="line">   <span class="comment"># 返回2个参数的和.&quot;</span></span><br><span class="line">   total = arg1 + arg2</span><br><span class="line">   <span class="built_in">print</span> (<span class="string">&quot;函数内 : &quot;</span>, total)</span><br><span class="line">   <span class="keyword">return</span> total</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用sum函数</span></span><br><span class="line">total = <span class="built_in">sum</span>( <span class="number">10</span>, <span class="number">20</span> )</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;函数外 : &quot;</span>, total)</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<img src="C:\Users\12475\AppData\Roaming\Typora\typora-user-images\1675214602165.png" alt="1675214602165" style="zoom:67%;" />
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">馬也</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/09/19/Python%E5%87%BD%E6%95%B0/">http://example.com/2023/09/19/Python%E5%87%BD%E6%95%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">木易＆馬也</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a><a class="post-meta__tags" href="/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础</a><a class="post-meta__tags" href="/tags/Numpy/">Numpy</a></div><div class="post_share"><div class="social-share" data-image="/img/train.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechatpay.png" target="_blank"><img class="post-qr-code-img" src="/img/wechatpay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.png" target="_blank"><img class="post-qr-code-img" src="/img/alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/09/19/Python%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"><img class="prev-cover" src="/img/train.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Python基本数据类型</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/19/Python%E9%94%99%E8%AF%AF%E5%92%8C%E5%BC%82%E5%B8%B8/"><img class="next-cover" src="/img/train.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Python错误与异常</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/09/19/Python-Numpy/" title="Python-Numpy"><img class="cover" src="/img/train.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-19</div><div class="title">Python-Numpy</div></div></a></div><div><a href="/2023/09/19/Python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="Python数据类型转换"><img class="cover" src="/img/train.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-19</div><div class="title">Python数据类型转换</div></div></a></div><div><a href="/2023/09/19/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="Python数据结构"><img class="cover" src="/img/train.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-19</div><div class="title">Python数据结构</div></div></a></div><div><a href="/2023/09/19/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="Python面向对象"><img class="cover" src="/img/train.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-19</div><div class="title">Python面向对象</div></div></a></div><div><a href="/2023/09/19/Python%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84/" title="Python控制结构"><img class="cover" src="/img/train.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-19</div><div class="title">Python控制结构</div></div></a></div><div><a href="/2023/09/19/Python%E5%9F%BA%E7%A1%80/" title="Python基础"><img class="cover" src="/img/train.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-19</div><div class="title">Python基础</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/train.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">馬也</div><div class="author-info__description">路漫漫其修远兮，吾将上下而求索</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/970640814"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/970640814" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/970640814@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">Python函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.</span> <span class="toc-text">定义一个函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">语法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">函数调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">1.3.</span> <span class="toc-text">参数传递</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E6%9B%B4%E6%94%B9-mutable-%E4%B8%8E%E4%B8%8D%E5%8F%AF%E6%9B%B4%E6%94%B9-immutable-%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.3.1.</span> <span class="toc-text">可更改(mutable)与不可更改(immutable)对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-%E4%BC%A0%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text">python 传不可变对象实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.3.3.</span> <span class="toc-text">传可变对象实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0"><span class="toc-number">1.4.</span> <span class="toc-text">参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%85%E9%9C%80%E5%8F%82%E6%95%B0"><span class="toc-number">1.4.1.</span> <span class="toc-text">必需参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="toc-number">1.4.2.</span> <span class="toc-text">关键字参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"><span class="toc-number">1.4.3.</span> <span class="toc-text">默认参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%AE%9A%E9%95%BF%E5%8F%82%E6%95%B0"><span class="toc-number">1.4.4.</span> <span class="toc-text">不定长参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="toc-number">1.5.</span> <span class="toc-text">匿名函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#return-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.6.</span> <span class="toc-text">return 语句</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/09/Harmony%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" title="Harmony组件化开发"><img src="/img/train.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Harmony组件化开发"/></a><div class="content"><a class="title" href="/2024/11/09/Harmony%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" title="Harmony组件化开发">Harmony组件化开发</a><time datetime="2024-11-09T08:55:03.682Z" title="发表于 2024-11-09 16:55:03">2024-11-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/08/Harmony%E6%9E%84%E5%BB%BA%E5%BA%94%E7%94%A8/" title="Harmony构建应用"><img src="/img/train.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Harmony构建应用"/></a><div class="content"><a class="title" href="/2024/11/08/Harmony%E6%9E%84%E5%BB%BA%E5%BA%94%E7%94%A8/" title="Harmony构建应用">Harmony构建应用</a><time datetime="2024-11-08T12:32:26.051Z" title="发表于 2024-11-08 20:32:26">2024-11-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/07/ArkTS/" title="ArkTS学习"><img src="/img/train.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ArkTS学习"/></a><div class="content"><a class="title" href="/2024/11/07/ArkTS/" title="ArkTS学习">ArkTS学习</a><time datetime="2024-11-07T07:36:33.808Z" title="发表于 2024-11-07 15:36:33">2024-11-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/05/Flask%E5%AD%A6%E4%B9%A0/" title="Flask学习"><img src="/img/train.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Flask学习"/></a><div class="content"><a class="title" href="/2024/11/05/Flask%E5%AD%A6%E4%B9%A0/" title="Flask学习">Flask学习</a><time datetime="2024-11-05T08:02:55.185Z" title="发表于 2024-11-05 16:02:55">2024-11-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/01/ArkUI/" title="ArkUI学习"><img src="/img/train.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ArkUI学习"/></a><div class="content"><a class="title" href="/2024/11/01/ArkUI/" title="ArkUI学习">ArkUI学习</a><time datetime="2024-11-01T03:26:47.000Z" title="发表于 2024-11-01 11:26:47">2024-11-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 By 馬也</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, Welcome to TC's <a herf="https://maye7.cn/">Blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
